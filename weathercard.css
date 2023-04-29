@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+}
+body{ 
+    display:flex;
+
+  background-color: rgb(238, 231, 231);     
+
+}
+main{
+    background-color: white;
+    width:500px;
+    height:300px;
+    margin-left:75px;
+    margin-top:40px;
+    position:relative;
+
+}
+.curwe{
+    font-size:15px;
+    font-weight:500;
+    margin-left:20px;
+    margin-top: 20px;    
+}
+.time{
+    font-size:15px;
+    font-weight:500;
+    margin-left:390px;
+    margin-top:-15px;
+}
+.big{
+    margin-right:30px;
+    margin-left:20px;
+}
+.cloudy{
+    margin-left:20px;
+    margin-top:20px;
+}
+.temp{
+    margin-left:100px;
+    margin-top:-40px;
+}
+.weather{
+    font-size:15px;
+    font-weight:500;
+    margin-left:350px;
+    margin-top:-20px;
+}
+.wind{
+    font-size:15px;
+    font-weight:500;
+    margin-left:20px;
+    margin-top:60px;
+
+}
+.small{
+    width:40%;
+    margin-left:20px;
+    
+}
+.Humidity{
+    font-size:15px;
+    font-weight:500;
+    margin-left:20px;
+    margin-top:30px;
+}
+.Maxtemp{
+    font-size:15px;
+    font-weight:500;
+    margin-left:20px;
+    margin-top:30px;
+
+}
+.Pressure{
+    font-size:15px;
+    font-weight:500;
+    margin-left:250px;
+    margin-top:-117px;
+}
+.Visibility{
+    font-size:15px;
+    font-weight: 500px;
+    margin-left:250px;
+    margin-top:30px;
+}
+.Mintemp{
+    font-size:15px;
+    font-weight:500;
+    margin-left:250px;
+    margin-top:30px;
+}
+.smleft{
+    width:40%;
+    margin-left:250px;
+    
+}
