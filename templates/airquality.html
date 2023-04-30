@@ -6,32 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/suncloud.png"  type="image/x-icon">
     <title>Aircast</title>
-    <link rel="stylesheet" href="./styles/airquality.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/airquality.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     
     <header>
         <div class="header-logo">
-            <img src="./assets/logo1.png" alt="">
+            <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="">
         </div>
         <div class="header-location">
-            <img src="./assets/location .png" alt="" height="50px">
+            <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
             <p style="margin-left: 10px; color: white;"><b>Chennai</b>, Tamil Nadu</p>
         </div>
+        <form method = "POST">
         <div class="header-search">
             <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
             <input type="text" class="search-box" placeholder="Search for places"/>
         </div>
+    </form>
     </header>   
 
     <main class="page-content">
 
         <nav class="navi">
             <div class="navi-part1">
-                <a href="#" class="navi-content">TODAY</a>
-                <a href="#" class="navi-content">HOURLY</a>
-                <a href="#" class="navi-content">DAILY</a>
+                <a href="{{url_for('forecast')}}" class="navi-content">TODAY</a>
+                <a href="{{url_for('hourly')}}" class="navi-content">HOURLY</a>
+                <a href="{{url_for('daily')}}" class="navi-content">DAILY</a>
                 <a href="#" class="navi-content">AIR QUALITY</a>
             </div>
         </nav>  

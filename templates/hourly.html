@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    {% if data.country_code and data.coordinate and data.temp1 and data.temp2 and data.temp3 and data.temp4 and data.cityname and data.lastupdate and data.weather1 and data.weather2 and data.weather3 and data.weather4 and data.img1 and data.img2 and data.img3 and data.img4 and data.time1 and data.time2 and data.time3 and data.time4 %}
+    {% if data.country_code and data.coordinate and data.temp1 and data.temp2 and data.temp3 and data.temp4 and data.cityname and data.lastupdate and data.weather1 and data.weather2 and data.weather3 and data.weather4 and data.img1 and data.img2 and data.img3 and data.img4 and data.time1 and data.time2 and data.time3 and data.time4 and data.wind1 and data.wind2 and data.wind3 and data.wind4 and data.pressure1 and data.pressure2 and data.pressure3 and data.pressure4 and data.humidity1 and data.humidity2 and data.humidity3 and data.humidity4 and data.maxtemp1 and data.maxtemp2 and data.maxtemp3 and data.maxtemp4 and data.mintemp1 and data.mintemp2 and data.mintemp3 and data.mintemp4 and data.visibility1 and data.visibility2 and data.visibility3 and data.visibility4%}
     <header>
         <div class="header-logo">
             <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="">
@@ -36,7 +36,7 @@
                 <a href="{{url_for('forecast')}}" class="navi-content">TODAY</a>
                 <a href="#" class="navi-content">HOURLY</a>
                 <a href="{{url_for('daily')}}" class="navi-content">DAILY</a>
-                <a href="#" class="navi-content">AIR QUALITY</a>
+                <a href="{{url_for('airquality')}}" class="navi-content">AIR QUALITY</a>
             </div>
         </nav>  
         <hr class="navi-hr">
@@ -61,9 +61,43 @@
                     </div>
                     <br />
                 </div>
-                
+                <div class="weathercard-details">
+                    <div class="details-col-1">
+                        <div class="details-row">
+                            <p class="details-content">Wind Speed</p>
+                            <p class="details-content" style="color: grey;">{{data.wind1}} km/h</p>
+                        </div>
+                        
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Humidity</p>
+                            <p class="details-content" style="color: grey;">{{data.humidity1}}</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Max Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.maxtemp1}}°C</p>
+                        </div>
+                    </div>
+                    <div class="details-col-2">
+                        <div class="details-row">
+                            <p class="details-content">Pressure</p>
+                            <p class="details-content" style="color: grey;">{{data.pressure1}} mb</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Visibility</p>
+                            <p class="details-content" style="color: grey;">{{data.visibility1}} km</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Min Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.mintemp1}}°C</p>
+                        </div>
+                    </div>
+                </div>
             </main>
-
+            <br />
             <main class="weathercard-main">
                 <div class="weathercard-head">
                     <p>{{data.time2}}</p>
@@ -71,7 +105,7 @@
                 </div>
                 
                 <hr>
-        
+                
                 <div class="weathercard-temp">
                     <div class="part-1">
                         <img class='temp-img' src={{data.img2}}>
@@ -83,9 +117,43 @@
                     </div>
                     <br />
                 </div>
-                
+                <div class="weathercard-details">
+                    <div class="details-col-1">
+                        <div class="details-row">
+                            <p class="details-content">Wind Speed</p>
+                            <p class="details-content" style="color: grey;">{{data.wind2}} km/h</p>
+                        </div>
+                        
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Humidity</p>
+                            <p class="details-content" style="color: grey;">{{data.humidity2}}</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Max Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.maxtemp2}}°C</p>
+                        </div>
+                    </div>
+                    <div class="details-col-2">
+                        <div class="details-row">
+                            <p class="details-content">Pressure</p>
+                            <p class="details-content" style="color: grey;">{{data.pressure2}} mb</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Visibility</p>
+                            <p class="details-content" style="color: grey;">{{data.visibility2}} km</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Min Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.mintemp2}}°C</p>
+                        </div>
+                    </div>
+                </div>
             </main>
-
+            <br />
             <main class="weathercard-main">
                 <div class="weathercard-head">
                     <p>{{data.time3}}</p>
@@ -105,9 +173,43 @@
                     </div>
                     <br />
                 </div>
-                
+                <div class="weathercard-details">
+                    <div class="details-col-1">
+                        <div class="details-row">
+                            <p class="details-content">Wind Speed</p>
+                            <p class="details-content" style="color: grey;">{{data.wind3}} km/h</p>
+                        </div>
+                        
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Humidity</p>
+                            <p class="details-content" style="color: grey;">{{data.humidity3}}</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Max Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.maxtemp3}}°C</p>
+                        </div>
+                    </div>
+                    <div class="details-col-2">
+                        <div class="details-row">
+                            <p class="details-content">Pressure</p>
+                            <p class="details-content" style="color: grey;">{{data.pressure3}} mb</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Visibility</p>
+                            <p class="details-content" style="color: grey;">{{data.visibility3}} km</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Min Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.mintemp3}}°C</p>
+                        </div>
+                    </div>
+                </div>
             </main>
-            
+            <br />
             <main class="weathercard-main">
                 <div class="weathercard-head">
                     <p>{{data.time4}}</p>
@@ -127,7 +229,41 @@
                     </div>
                     <br />
                 </div>
-                
+                <div class="weathercard-details">
+                    <div class="details-col-1">
+                        <div class="details-row">
+                            <p class="details-content">Wind Speed</p>
+                            <p class="details-content" style="color: grey;">{{data.wind4}} km/h</p>
+                        </div>
+                        
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Humidity</p>
+                            <p class="details-content" style="color: grey;">{{data.humidity4}}</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Max Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.maxtemp4}}°C</p>
+                        </div>
+                    </div>
+                    <div class="details-col-2">
+                        <div class="details-row">
+                            <p class="details-content">Pressure</p>
+                            <p class="details-content" style="color: grey;">{{data.pressure4}} mb</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Visibility</p>
+                            <p class="details-content" style="color: grey;">{{data.visibility4}} km</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Min Temp</p>
+                            <p class="details-content" style="color: grey;">{{data.mintemp4}}°C</p>
+                        </div>
+                    </div>
+                </div>
             </main>
             
 

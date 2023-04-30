@@ -48,13 +48,37 @@ def hourlydata():
             f"https://openweathermap.org/img/wn/{datalist['list'][7]['weather'][0]['icon']}@2x.png"
         ),
         "img4": str(
-            f"https://openweathermap.org/img/wn/{datalist['list'][6]['weather'][0]['icon']}@2x.png"
+            f"https://openweathermap.org/img/wn/{datalist['list'][8]['weather'][0]['icon']}@2x.png"
         ),
         "time1": str(datalist["list"][5]["dt_txt"][10:]),  
         "time2": str(datalist["list"][6]["dt_txt"][10:]),
         "time3": str(datalist["list"][7]["dt_txt"][10:]),
         "time4": str(datalist["list"][8]["dt_txt"][10:]),
         "lastupdate": str(dt.strftime("%H:%M:%S")),
+        "wind1": str(datalist['list'][5]["wind"]["speed"]),
+        "wind2": str(datalist['list'][6]["wind"]["speed"]),
+        "wind3": str(datalist['list'][7]["wind"]["speed"]),
+        "wind4": str(datalist['list'][8]["wind"]["speed"]),
+        "pressure1": str(datalist['list'][5]["main"]["pressure"]),
+        "pressure2": str(datalist['list'][6]["main"]["pressure"]),
+        "pressure3": str(datalist['list'][7]["main"]["pressure"]),
+        "pressure4": str(datalist['list'][8]["main"]["pressure"]),
+        "humidity1": str(datalist['list'][5]["main"]["humidity"]),
+        "humidity2": str(datalist['list'][6]["main"]["humidity"]),
+        "humidity3": str(datalist['list'][7]["main"]["humidity"]),
+        "humidity4": str(datalist['list'][8]["main"]["humidity"]),
+        "maxtemp1": str(round(datalist['list'][5]["main"]["temp_max"], 1)),
+        "maxtemp2": str(round(datalist['list'][6]["main"]["temp_max"], 1)),
+        "maxtemp3": str(round(datalist['list'][7]["main"]["temp_max"], 1)),
+        "maxtemp4": str(round(datalist['list'][8]["main"]["temp_max"], 1)),
+        "mintemp1": str(round(datalist['list'][5]["main"]["temp_min"], 1)),
+        "mintemp2": str(round(datalist['list'][6]["main"]["temp_min"], 1)),
+        "mintemp3": str(round(datalist['list'][7]["main"]["temp_min"], 1)),
+        "mintemp4": str(round(datalist['list'][8]["main"]["temp_min"], 1)),
+        "visibility1": str(round(datalist['list'][5]["visibility"] / 1000)),
+        "visibility2": str(round(datalist['list'][6]["visibility"] / 1000)),
+        "visibility3": str(round(datalist['list'][7]["visibility"] / 1000)),
+        "visibility4": str(round(datalist['list'][8]["visibility"] / 1000)),
     }
     return data
 
@@ -124,9 +148,7 @@ def get_data():
         "pressure": str(list_of_data["main"]["pressure"]),
         "humidity": str(list_of_data["main"]["humidity"]),
         "weather": str(list_of_data["weather"][0]["description"]),
-        "img": str(
-            f"https://openweathermap.org/img/wn/{list_of_data['weather'][0]['icon']}@2x.png"
-        ),
+        "img": str(f"https://openweathermap.org/img/wn/{list_of_data['weather'][0]['icon']}@2x.png"),
         "lastupdate": str(dt.strftime("%H:%M:%S")),
     }
     return data
@@ -165,6 +187,7 @@ def hourly():
         session["my_var"] = [city, statecode, countrycode]
         return redirect(url_for("hourly"))
     data = hourlydata()
+    print(data)
     return render_template("hourly.html", data=data)
 
 @app.route("/daily", methods=["POST", "GET"])
@@ -177,6 +200,10 @@ def daily():
         return redirect(url_for("daily"))
     data = dailydata()
     return render_template("daily.html", data=data)
+
+@app.route("/airquality", methods = ["GET","POST"])
+def airquality():
+    return render_template("airquality.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
