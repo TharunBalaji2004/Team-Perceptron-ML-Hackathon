@@ -12,18 +12,20 @@
 </head>
 
 <body>
-    
+    {% if data.country_code and data.coordinate and data.temp and data.pressure and data.humidity and data.lastupdate and data.weather and data.maxtemp and data.mintemp and data.visibility and data.wind and data.img %}
     <header>
         <div class="header-logo">
             <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="">
         </div>
         <div class="header-location">
             <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
-            <p style="margin-left: 10px; color: white;"><b>Chennai</b>, Tamil Nadu</p>
+            <p style="margin-left: 10px; color: white;"><b>{{data.cityname}}</b>, Tamil Nadu</p>
         </div>
         <div class="header-search">
+            <form method ="POST">
             <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-            <input type="text" class="search-box" placeholder="Search for places"/>
+            <input type="text" name = "city" class="search-box" placeholder="Search for places"/>
+            </form>
         </div>
     </header>   
 
@@ -43,19 +45,19 @@
             <main class="weathercard-main">
                 <div class="weathercard-head">
                     <p>Current Weather</p>
-                    <p>9:00AM</p>
+                    <p>{{data.lastupdate}}</p>
                 </div>
                 
                 <hr>
         
                 <div class="weathercard-temp">
                     <div class="part-1">
-                        <img class='temp-img' src="{{ url_for('static',filename='img/partlycloudy.png') }}">
-                        <span class="temp">0°</span>
-                        <span class="celsius">C</span>
+                        <img class='temp-img' src={{data.img}}>
+                        <span class="temp">{{data.temp}}</span>
+                        <span class="celsius">°C</span>
                     </div>
                     <div class="part-2">
-                        <span class="remark">Partly Cloudy</span>
+                        <span class="remark">{{data.weather}}</span>
                     </div>
                         
                 </div>
@@ -64,39 +66,39 @@
                     <div class="details-col-1">
                         <div class="details-row">
                             <p class="details-content">Wind Speed</p>
-                            <p class="details-content" style="color: grey;">0 km/h</p>
+                            <p class="details-content" style="color: grey;">{{data.wind}} km/h</p>
                         </div>
                         
                         <hr class="details-line">
                         <div class="details-row">
                             <p class="details-content">Humidity</p>
-                            <p class="details-content" style="color: grey;">0%</p>
+                            <p class="details-content" style="color: grey;">{{data.humidity}}</p>
                         </div>
                         <hr class="details-line">
                         <div class="details-row">
                             <p class="details-content">Max Temp</p>
-                            <p class="details-content" style="color: grey;">0°C</p>
+                            <p class="details-content" style="color: grey;">{{data.maxtemp}}°C</p>
                         </div>
                     </div>
                     <div class="details-col-2">
                         <div class="details-row">
                             <p class="details-content">Pressure</p>
-                            <p class="details-content" style="color: grey;">0 mb</p>
+                            <p class="details-content" style="color: grey;">{{data.pressure}} mb</p>
                         </div>
                         <hr class="details-line">
                         <div class="details-row">
                             <p class="details-content">Visibility</p>
-                            <p class="details-content" style="color: grey;">0%</p>
+                            <p class="details-content" style="color: grey;">{{data.visibility}} km</p>
                         </div>
                         <hr class="details-line">
                         <div class="details-row">
                             <p class="details-content">Min Temp</p>
-                            <p class="details-content" style="color: grey;">0°C</p>
+                            <p class="details-content" style="color: grey;">{{data.mintemp}}°C</p>
                         </div>
                     </div>
                 </div>
         
-                
+            {%endif %}
             </main>
 
             <!-- JINJA TEMPLATE -->
