@@ -1,0 +1,269 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+
+}
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 50vh;
+  background-color: rgb(238, 231, 231);
+}
+
+header{
+  position:fixed; 
+  top:0;
+  left:0;
+  width:100%;
+  padding:20px 50px;
+  background:rgb(30, 163, 245);
+  display:flex;
+  justify-content:space-between;
+  
+  z-index:99; 
+  
+}   
+
+.logo{
+  
+  font-size: 2em;
+  color:aliceblue;
+  user-select:none;
+  margin-left:-370px;
+  
+}
+h4{
+  position:relative;
+  font-size:20px;
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  margin-left:-430px;
+  margin-top:-20px;
+  width:100%;
+}
+
+.navigation input[type=text]{
+  float:right;
+  padding:6px;
+  border:none;
+  margin-top: -20px;
+  margin-left: 40px;
+  border-radius: 5px;
+  outline:none;
+  background-color:rgb(212, 208, 208);
+}
+
+.button{
+  float: left;
+  padding: 8px 10px;
+  margin-top: -20px;
+  margin-right: -200px;
+  margin-left:20px;
+  background:rgb(212, 208, 208) ;
+  font-size: 10px;
+  border: none;
+  border-radius:5px;
+  outline:none;
+  cursor: pointer;
+}
+.suncloud{
+  padding:0px 1px;
+  width:-2px;
+  height:2px;
+  margin-top:-8px;
+}
+.location{
+  padding:-5px 1px;
+  width: -5px;
+  height:40px;
+  margin-top:-10px;
+  margin-left:-500px;
+  border-radius:50px;
+  outline:none;
+  
+}
+.wrapper{
+  margin-left:-775px;
+  position:fixed;
+  
+}
+.nav{
+  height:2vh;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.navi a{
+  position:relative;
+  font-size:1.1em;
+  color:black;
+  font-weight:500;
+  margin-left:40px;
+  text-decoration: none;
+
+}
+.navi a::after{
+  content:'';
+  position:absolute;
+  left:0;    
+  bottom: -6px;
+  width: 100%;
+  height: 4px; 
+  background:rgb(30, 163, 245); 
+  border-radius: 10px;
+  transform:scaleX(0);
+  transition:transform.5s;
+}  
+
+.navi a:hover::after{
+  transform:scaleX(1);
+}
+.navi a:active{
+  text-decoration:underline;
+  text-decoration-color:rgb(30, 163, 245);
+}
+.rec{
+  position:absolute;
+  margin-left:1020px;
+  margin-top:-20px;
+  font-weight:500px;
+  font-size:1.1em;
+}
+hr{ 
+  
+    
+  min-height:0;
+  color:gray;
+  width:100%;  
+  height: 2px;
+  margin-top:25px;
+  margin-left:50px;
+  margin-right:68px;   
+
+}
+main{
+  box-sizing:border-box;
+  background-color: white;
+  width:500px;
+  height:350px;
+  margin-left:-670px;
+  margin-top:450px;
+  position:absolute;
+
+}
+.curwe{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:20px;
+  margin-top: 20px;    
+}
+.time{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:390px;
+  margin-top:20px;
+}
+.big{
+  position:absolute;
+  
+  margin-left:0px;
+  margin-top:40px;
+}
+.cloudy{
+  position:absolute;
+  margin-left:20px;
+  margin-top:50px;
+}
+.temp{
+  position:static;
+  margin-left:130px;
+  margin-top:70px;
+}
+.weather{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:350px;
+  margin-top:-20px;
+}
+.wind{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:20px;
+  margin-top:100px;
+
+}
+
+.Humidity{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:20px;
+  margin-top:30px;
+}
+.Maxtemp{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:20px;
+  margin-top:30px;
+
+}
+.Pressure{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:250px;
+  margin-top:-95px;
+}
+.Visibility{
+  position:absolute;
+  font-size:15px;
+  font-weight: 500px;
+  margin-left:250px;
+  margin-top:-30px;
+}
+.Mintemp{
+  position:absolute;
+  font-size:15px;
+  font-weight:500;
+  margin-left:250px;
+  margin-top:30px;
+}
+.small{
+  
+  width:40%;
+  margin-top:130px;
+  margin-left:20px;
+}
+.small1{  
+  width:40%;
+  margin-top:60px;
+  margin-left:20px;
+}
+
+
+.smleft{
+  position:absolute;
+  width:40%;
+  margin-top:-65px;
+  margin-left:250px;
+}
+
+.smleft1{
+  position:absolute;
+  width:40%;
+  margin-top:-2px;
+  margin-left:250px;
+}
+
+
+ 
+
