@@ -43,24 +43,24 @@
             <main class="airquality-card">
                 <div class="airquality-card-head">
                     <span>Air Quality Status</span>
-                    <span>{{data.lastupdate}}</span>
+                    <span>Last updated at: {{data.lastupdate}}</span>
                 </div>
                 <hr class="airquality-card-line">
                 <div class="airquality-card-content">
                     <div class="content-col1">
                         <div class="aqi-circle">
-                            <span class="aqi-value">4</span>
+                            <span class="aqi-value">{{data.aqi}}</span>
                             <span class="aqi-text">AQI</span>
                         </div>
                     </div>
                     <div class="content-col2">
                         <div class="content-col2-row1">
                             <span>Air Quality: </span>
-                            <span class="aqi-remark">Moderate</span>
+                            <span class="aqi-remark">{{data.aqi_remarks}}</span>
                         </div>
                         <div class="content-col2-row2">
                             <span>
-                                The air quality is ideal for most individuals; enjoy your normal outdoor activities.
+                                {{data.airquality_remarks}}
                             </span>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
             <main class="airpollutants-card">
                 <div class="airquality-card-head">
                     <span>Air Pollutants</span>
-                    <span>09:00 AM</span>
+                    <span>Last updated at: {{data.lastupdate}}</span>
                 </div>
                 <hr class="airquality-card-line">
                 <div class="airpollutants-card-content">
@@ -81,11 +81,11 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
+                            {{data['pollutants_desc'][0]}}
                         </span>
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][0]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
@@ -95,11 +95,11 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
+                            {{data['pollutants_desc'][1]}}
                         </span>
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][1]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
@@ -109,11 +109,11 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
+                            {{data['pollutants_desc'][2]}}
                         </span>
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][2]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
@@ -123,11 +123,11 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
+                            {{data['pollutants_desc'][3]}}
                         </span>
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][3]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
@@ -137,11 +137,11 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
+                            {{data['pollutants_desc'][4]}}
                         </span>
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][4]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
@@ -151,11 +151,10 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
-                        </span>
+                            {{data['pollutants_desc'][5]}}
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][5]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
@@ -165,11 +164,11 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
+                            {{data['pollutants_desc'][6]}}
                         </span>
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][6]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
@@ -179,11 +178,11 @@
                     </div>
                     <div class="airpollutants-card-col2">
                         <span class="airpollutants-desc">
-                            Exposure to Sulfur Dioxide can lead to throat and eye irritation and aggravate asthma as well as chronic bronchitis.
+                            {{data['pollutants_desc'][7]}}
                         </span>
                     </div>
                     <div class="airpollutants-card-col3">
-                        <span>40</span>
+                        <span class="ap-value">{{data['pollutants'][7]}}</span>
                         <span>μg/m3</span>
                     </div>
                 </div>
