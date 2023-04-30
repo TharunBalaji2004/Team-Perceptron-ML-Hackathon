@@ -34,8 +34,8 @@
         <nav class="navi">
             <div class="navi-part1">
                 <a href="#" class="navi-content">TODAY</a>
-                <a href="#" class="navi-content">HOURLY</a>
-                <a href="#" class="navi-content">DAILY</a>
+                <a href="{{url_for('hourly')}}" class="navi-content">HOURLY</a>
+                <a href="{{url_for('daily')}}" class="navi-content">DAILY</a>
                 <a href="#" class="navi-content">AIR QUALITY</a>
             </div>
         </nav>  
@@ -45,7 +45,7 @@
             <main class="weathercard-main">
                 <div class="weathercard-head">
                     <p>Current Weather</p>
-                    <p>{{data.lastupdate}}</p>
+                    <p>Last update at : {{data.lastupdate}}</p>
                 </div>
                 
                 <hr>
@@ -100,6 +100,7 @@
         
             {%endif %}
             </main>
+            
 
             <!-- JINJA TEMPLATE -->
             <!-- FLASK INTEGRATION GOES HERE -->
