@@ -3,3 +3,4 @@ requests
 python_dotenv
 gunicorn
 numpy
+pickle
