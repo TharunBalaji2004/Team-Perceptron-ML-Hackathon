@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="suncloud.png"  type="image/x-icon">
+    <title>Aircast</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    {% if data.country_code and data.coordinate and data.temp1 and data.temp2 and data.temp3 and data.temp4 and data.cityname and data.lastupdate and data.weather1 and data.weather2 and data.weather3 and data.weather4 and data.img1 and data.img2 and data.img3 and data.img4 and data.time1 and data.time2 and data.time3 and data.time4 %}
+    <header>
+        <div class="header-logo">
+            <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="">
+        </div>
+        <div class="header-location">
+            <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
+            <p style="margin-left: 10px; color: white;"><b>{{data.cityname}}</b>, Tamil Nadu</p>
+        </div>
+        <div class="header-search">
+            <form method ="POST">
+            <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+            <input type="text" name = "city" class="search-box" placeholder="Search for places"/>
+            </form>
+        </div>
+    </header>   
+
+    <main class="page-content">
+
+        <nav class="navi">
+            <div class="navi-part1">
+                <a href="{{url_for('forecast')}}" class="navi-content">TODAY</a>
+                <a href="{{url_for('hourly')}}" class="navi-content">HOURLY</a>
+                <a href="#" class="navi-content">DAILY</a>
+                <a href="#" class="navi-content">AIR QUALITY</a>
+            </div>
+        </nav>  
+        <hr class="navi-hr">
+
+        <div class="page-weathercard">
+            <main class="weathercard-main">
+                <div class="weathercard-head">
+                    <p>{{data.time1}}</p>
+                    <p>Last update at : {{data.lastupdate}}</p>
+                </div>
+                
+                <hr>
+        
+                <div class="weathercard-temp">
+                    <div class="part-1">
+                        <img class='temp-img' src={{data.img1}}>
+                        <span class="temp">{{data.temp1}}</span>
+                        <span class="celsius">°C</span>
+                    </div>
+                    <div class="part-2">
+                        <span class="remark">{{data.weather1}}</span>
+                    </div>
+                    <br />
+                </div>
+                
+            </main>
+
+            <main class="weathercard-main">
+                <div class="weathercard-head">
+                    <p>{{data.time2}}</p>
+                    <p>Last update at : {{data.lastupdate}}</p>
+                </div>
+                
+                <hr>
+        
+                <div class="weathercard-temp">
+                    <div class="part-1">
+                        <img class='temp-img' src={{data.img2}}>
+                        <span class="temp">{{data.temp2}}</span>
+                        <span class="celsius">°C</span>
+                    </div>
+                    <div class="part-2">
+                        <span class="remark">{{data.weather2}}</span>
+                    </div>
+                    <br />
+                </div>
+                
+            </main>
+
+            <main class="weathercard-main">
+                <div class="weathercard-head">
+                    <p>{{data.time3}}</p>
+                    <p>Last update at : {{data.lastupdate}}</p>
+                </div>
+                
+                <hr>
+        
+                <div class="weathercard-temp">
+                    <div class="part-1">
+                        <img class='temp-img' src={{data.img3}}>
+                        <span class="temp">{{data.temp3}}</span>
+                        <span class="celsius">°C</span>
+                    </div>
+                    <div class="part-2">
+                        <span class="remark">{{data.weather3}}</span>
+                    </div>
+                    <br />
+                </div>
+                
+            </main>
+            
+            <main class="weathercard-main">
+                <div class="weathercard-head">
+                    <p>{{data.time4}}</p>
+                    <p>Last update at : {{data.lastupdate}}</p>
+                </div>
+                
+                <hr>
+        
+                <div class="weathercard-temp">
+                    <div class="part-1">
+                        <img class='temp-img' src={{data.img4}}>
+                        <span class="temp">{{data.temp4}}</span>
+                        <span class="celsius">°C</span>
+                    </div>
+                    <div class="part-2">
+                        <span class="remark">{{data.weather4}}</span>
+                    </div>
+                    <br />
+                </div>
+                
+            </main>
+            
+
+            
+            {%endif %}
+            
+
+            <!-- JINJA TEMPLATE -->
+            <!-- FLASK INTEGRATION GOES HERE -->
+
+        </div>
+
+    </main>
+</body>
+</html>
