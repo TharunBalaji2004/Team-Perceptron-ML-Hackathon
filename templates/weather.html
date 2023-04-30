@@ -1,118 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Company login</title>
-    <meta name="description" content="Company login page" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="suncloud.png"  type="image/x-icon">
+    <title>Aircast</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Pico.css -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css"
-    />
-    <style>
-      body > main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        min-height: calc(100vh - 7rem);
-      }
+</head>
 
-      article {
-        padding: 0;
-        overflow: hidden;
-        width: 800px;
-        height: 500px;
-        justify-content: center;
-      }
-      html {
-        zoom: 75%;
-      }
-
-      @media (min-width: 1200px) {
-        article div {
-          padding: 50px;
-          justify-content: center;
-        }
-      }
-      /* Footer */
-      body > footer {
-        padding: 1rem 0;
-      }
-      body {
-        background-image: url(/static/img/img1.jpg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        height: 999px;
-        width: 100%;
-      }
-      article {
-        text-align: center;
-      }
-
-      .alert.error {
-        padding: 12px;
-        border-radius: 3px;
-        font-size: 1.2rem;
-        margin-bottom: 16px;
-        border: 2px solid darkred;
-        background-color: red;
-        color: white;
-      }
-
-      .alert.success {
-        padding: 12px;
-        border-radius: 3px;
-        font-size: 1.2rem;
-        margin-bottom: 16px;
-        border: 2px solid green;
-        background-color: green;
-        color: black;
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="container-fluid">
-      <ul>
-        <li>
-          <a href="./" class="contrast"><strong>Company Login</strong></a>
-        </li>
-      </ul>
-    </nav>
-    <main class="container">
-      <article class="badge-primary">
-        <div>
-          <hgroup>
-            <h1>Country</h1>
-            <h2>Please enter city, statecode</h2>
-          </hgroup>
-          <form method="POST">
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="city"
-              aria-label="city"
-              autocomplete="nickname"
-              required
-            />
-            <input
-              type="text"
-              id="password"
-              name="password"
-              placeholder="statecode"
-              aria-label="statecode"
-              autocomplete="current-password"
-              required
-            />
-            <button id="submit" type="submit" class="contrast">Login</button>
-          </form>
+<body>
+    
+    <header>
+        <div class="header-logo">
+            <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="">
         </div>
-        <div></div>
-      </article>
+        <div class="header-location">
+            <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
+            <p style="margin-left: 10px; color: white;"><b>Chennai</b>, Tamil Nadu</p>
+        </div>
+        <div class="header-search">
+            <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+            <input type="text" class="search-box" placeholder="Search for places"/>
+        </div>
+    </header>   
+
+    <main class="page-content">
+
+        <nav class="navi">
+            <div class="navi-part1">
+                <a href="#" class="navi-content">TODAY</a>
+                <a href="#" class="navi-content">HOURLY</a>
+                <a href="#" class="navi-content">DAILY</a>
+                <a href="#" class="navi-content">AIR QUALITY</a>
+            </div>
+        </nav>  
+        <hr class="navi-hr">
+
+        <div class="page-weathercard">
+            <main class="weathercard-main">
+                <div class="weathercard-head">
+                    <p>Current Weather</p>
+                    <p>9:00AM</p>
+                </div>
+                
+                <hr>
+        
+                <div class="weathercard-temp">
+                    <div class="part-1">
+                        <img class='temp-img' src="{{ url_for('static',filename='img/partlycloudy.png') }}">
+                        <span class="temp">0°</span>
+                        <span class="celsius">C</span>
+                    </div>
+                    <div class="part-2">
+                        <span class="remark">Partly Cloudy</span>
+                    </div>
+                        
+                </div>
+        
+                <div class="weathercard-details">
+                    <div class="details-col-1">
+                        <div class="details-row">
+                            <p class="details-content">Wind Speed</p>
+                            <p class="details-content" style="color: grey;">0 km/h</p>
+                        </div>
+                        
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Humidity</p>
+                            <p class="details-content" style="color: grey;">0%</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Max Temp</p>
+                            <p class="details-content" style="color: grey;">0°C</p>
+                        </div>
+                    </div>
+                    <div class="details-col-2">
+                        <div class="details-row">
+                            <p class="details-content">Pressure</p>
+                            <p class="details-content" style="color: grey;">0 mb</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Visibility</p>
+                            <p class="details-content" style="color: grey;">0%</p>
+                        </div>
+                        <hr class="details-line">
+                        <div class="details-row">
+                            <p class="details-content">Min Temp</p>
+                            <p class="details-content" style="color: grey;">0°C</p>
+                        </div>
+                    </div>
+                </div>
+        
+                
+            </main>
+
+            <!-- JINJA TEMPLATE -->
+            <!-- FLASK INTEGRATION GOES HERE -->
+
+        </div>
+
     </main>
-  </body>
+</body>
 </html>
