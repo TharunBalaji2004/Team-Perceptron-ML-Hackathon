@@ -203,7 +203,14 @@ def daily():
 
 @app.route("/airquality", methods = ["GET","POST"])
 def airquality():
-    return render_template("airquality.html")
+    if request.method == "POST":
+        city = request.form.get("city")
+        statecode = request.form.get("state")
+        countrycode = "in"
+        session["my_var"] = [city, statecode, countrycode]
+        return redirect(url_for("airquality"))
+    data = get_data()
+    return render_template("airquality.html",data=data)
 
 if __name__ == "__main__":
     app.run(debug=True)

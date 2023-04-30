@@ -2,3 +2,4 @@ flask
 requests
 python_dotenv
 gunicorn
+numpy

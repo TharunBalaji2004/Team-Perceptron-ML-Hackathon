@@ -10,19 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    
+    {% if data.cityname and data.lastupdate%}
     <header>
         <div class="header-logo">
             <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="">
         </div>
         <div class="header-location">
             <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
-            <p style="margin-left: 10px; color: white;"><b>Chennai</b>, Tamil Nadu</p>
+            <p style="margin-left: 10px; color: white;"><b>{{data.cityname}}</b>, Tamil Nadu</p>
         </div>
         <form method = "POST">
         <div class="header-search">
             <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-            <input type="text" class="search-box" placeholder="Search for places"/>
+            <input type="text" name ="city" class="search-box" placeholder="Search for places"/>
         </div>
     </form>
     </header>   
@@ -43,7 +43,7 @@
             <main class="airquality-card">
                 <div class="airquality-card-head">
                     <span>Air Quality Status</span>
-                    <span>09:00 AM</span>
+                    <span>{{data.lastupdate}}</span>
                 </div>
                 <hr class="airquality-card-line">
                 <div class="airquality-card-content">
@@ -188,6 +188,7 @@
                     </div>
                 </div>
             </main>
+            {% endif %}
             <!-- JINJA TEMPLATE -->
             <!-- FLASK INTEGRATION GOES HERE -->
 
