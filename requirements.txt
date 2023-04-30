@@ -4,5 +4,4 @@ python_dotenv
 gunicorn
 numpy
 pandas
-sklearn
 scikit-learn
