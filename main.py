@@ -26,6 +26,10 @@ def hourlydata():
     datalist = requests.get(
         f"https://pro.openweathermap.org/data/2.5/forecast/hourly?q={my_var[0]}&cnt=10&appid={api}&units=metric"
     ).json()
+    if list_of_data["cod"] == "404":
+        my_var[0] = "chennai"
+        list_of_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai,tn,in&appid={api}&units=metric").json()
+        datalist = requests.get(f"https://pro.openweathermap.org/data/2.5/forecast/hourly?q=chennai&cnt=10&appid={api}&units=metric").json()
     data = {
         "cityname": f"{my_var[0]}",
         "country_code": str(list_of_data["sys"]["country"]),
@@ -94,6 +98,10 @@ def dailydata():
     datalist = requests.get(
         f"https://api.openweathermap.org/data/2.5/forecast/daily?q={my_var[0]}&cnt=10&appid={api}&units=metric"
     ).json()
+    if list_of_data["cod"] == "404":
+        my_var[0] = "chennai"
+        list_of_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai,tn,in&appid={api}&units=metric").json()
+        datalist = requests.get(f"https://api.openweathermap.org/data/2.5/forecast/daily?q=chennai&cnt=10&appid={api}&units=metric").json()
     data = {
         "cityname": f"{my_var[0]}",
         "country_code": str(list_of_data["sys"]["country"]),
@@ -136,6 +144,10 @@ def get_data():
     list_of_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={my_var[0]},tn,in&appid={api}&units=metric"
     ).json()
+    if list_of_data["cod"] == "404":
+        my_var[0] = "chennai"
+        list_of_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai,tn,in&appid={api}&units=metric").json()
+        datalist = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai&appid={api}&units=metric").json()
     data = {
         "cityname": f"{my_var[0]}",
         "country_code": str(list_of_data["sys"]["country"]),
