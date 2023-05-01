@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-<b>TNSDC - Naan Mudhalvan - Virtual Internship Program - ML Project Hackathon</b>
+<b>TNSDC - Naan Mudhalvan - Virtual Internship Program - ML Project Hackathon (April 2023)</b>
 </p>
 
 ## Project Description
