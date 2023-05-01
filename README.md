@@ -21,7 +21,7 @@ This project aims to:
 
 - Develop a system for real-time monitoring and forecasting of air quality and weatherconditions. The system uses various sensors to monitor air quality parameters such as particulate matter (PM2.5 and PM10), ozone (O3), carbon monoxide (CO), nitrogendioxide(NO2), and sulfur dioxide (SO2), as well as weather parameters suchas temperature, humidity, pressure and wind speed.
 
-- Development of a web-based platform that displays real-time air quality and weather data from various monitoring stations. The platform will also provide users with historical data, air quality indices, and weather forecast. The system will also have an alert system that notifies users of critical air quality conditions, such as high pollution levels and adverse weather conditions.
+-  Development of a web-based platform that displays real-time air quality and weather data from various monitoring stations. The platform will also provide users with historical data, air quality indices, and weather forecast. The system will also have an alert system that notifies users of critical air quality conditions, such as high pollution levels and adverse weather conditions.
 
 - The proposed system will be useful for various stakeholders, including government agencies, environmental organizations, and the general public. The system will provide valuable insight into air quality and weather conditions in real-time, enabling users to take necessary precautions to protect their health and well-being.
 
