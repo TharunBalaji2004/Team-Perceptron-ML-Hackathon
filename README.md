@@ -25,7 +25,7 @@ This project was developed for TNSDC Naan Mudhalvan ML Project Hackathon (April 
 
 ## Dataset
 
-The project uses dataset only for predicting Air Quality Index value which consists of air pollutant values such as CO, NO, NO2, PM2.5, PM10, etc. The dataset consists of air quality recorded in past 1 year of Top 10 Tamil Nadu cities, which are given by:
+The project uses dataset only for predicting Air Quality Index value which consists of air pollutant values such as CO, NO, NO2, PM2.5, PM10, etc. The dataset consists of air quality recorded in past 1 year of Top 10 Tamil Nadu cities, fetched from OpenWeather API which are given by:
 
 | City Name | Datset Size | Dataset Link |
 | :------: | :------: | :------: |
