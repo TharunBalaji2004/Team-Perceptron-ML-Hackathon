@@ -14,8 +14,7 @@ The project aims to:
 
 ## Project Members
 
-This project was developed for TNSDC Naan Mudhalvan ML Project Hackathon (April 2023) by *Team Perceptron*.
-
+This project was developed for TNSDC Naan Mudhalvan ML Project Hackathon (April 2023) by *Team Perceptron* from Chennai Institute of Technology.
 
 | Name | Dept | Email ID | GitHub Profile |
 | :---: | :---: | :---: | :---: |
