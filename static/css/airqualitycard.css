@@ -51,6 +51,10 @@ body{
     color: grey;
 }
 
+.ap-value {
+    color: grey;
+}
+
 .aqi-circle .aqi-value{
     font-size: 60px;
     font-weight: bold;
