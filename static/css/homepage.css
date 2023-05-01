@@ -49,6 +49,12 @@
     border: none;
     color: white;
     border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: rgb(30, 163, 245);
+    background-color: white;
 }
 
 .fa-search {
