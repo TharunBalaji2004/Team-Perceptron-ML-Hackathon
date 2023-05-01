@@ -121,7 +121,7 @@ Clone the repo and start running the project.
 
 | 6) Developed UI part |
 | :---: |
-| <img src="https://user-images.githubusercontent.com/95350584/235412125-a3cf1126-215d-4b21-824e-37b75aa46219.png" alt="1" height="400px" width="700" /> |
+| <img src="https://user-images.githubusercontent.com/95350584/235488691-7b5946cf-b363-4b4a-970f-6e8366f3c4b9.png" alt="1" height="400px" width="700" /> |
 
 | 7) Deployed Website (Weather Forecasting - Today) |
 | :---: |
