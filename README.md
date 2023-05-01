@@ -78,5 +78,8 @@ pip install -r requirements.txt
 ```
 
 ## Usage
+
+Clone the repo and start running the project.
+
 ## Results
 
