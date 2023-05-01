@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/suncloud.png"  type="image/x-icon">
+    <title>Aircast</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/airquality.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    {% if data.cityname and data.lastupdate%}
+    <header>
+        <div class="header-logo">
+            <img src="{{ url_for('static',filename='img/logo1.png') }}" alt="">
+        </div>
+        <div class="header-location">
+            <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
+            <p style="margin-left: 10px; color: white;"><b>{{data.cityname}}</b>, Tamil Nadu</p>
+        </div>
+        <form method = "POST">
+        <div class="header-search">
+            <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+            <input type="text" name ="city" class="search-box" placeholder="Search for places"/>
+        </div>
+    </form>
+    </header>   
+
+    <main class="page-content">
+
+        <nav class="navi">
+            <div class="navi-part1">
+                <a href="{{url_for('forecast')}}" class="navi-content">TODAY</a>
+                <a href="{{url_for('hourly')}}" class="navi-content">HOURLY</a>
+                <a href="{{url_for('daily')}}" class="navi-content">DAILY</a>
+                <a href="#" class="navi-content">AIR QUALITY</a>
+            </div>
+        </nav>  
+        <hr class="navi-hr">
+
+        <div class="page-airquality-card">
+            <main class="airquality-card">
+                <div class="airquality-card-head">
+                    <span>Air Quality Status</span>
+                    <span>Last updated at: {{data.lastupdate}}</span>
+                </div>
+                <hr class="airquality-card-line">
+                <div class="airquality-card-content">
+                    <div class="content-col1">
+                        <div class="aqi-circle">
+                            <span class="aqi-value">{{data.aqi}}</span>
+                            <span class="aqi-text">AQI</span>
+                        </div>
+                    </div>
+                    <div class="content-col2">
+                        <div class="content-col2-row1">
+                            <span>Air Quality: </span>
+                            <span class="aqi-remark">{{data.aqi_remarks}}</span>
+                        </div>
+                        <div class="content-col2-row2">
+                            <span>
+                                {{data.airquality_remarks}}
+                            </span>
+                        </div>
+                    </div>
+        
+                </div>
+        
+        
+            </main>
+            <main class="airpollutants-card">
+                <div class="airquality-card-head">
+                    <span>Air Pollutants</span>
+                    <span>Last updated at: {{data.lastupdate}}</span>
+                </div>
+                <hr class="airquality-card-line">
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">CO</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][0]}}
+                        </span>
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][0]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">NO</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][1]}}
+                        </span>
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][1]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">NO₂</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][2]}}
+                        </span>
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][2]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">O₃</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][3]}}
+                        </span>
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][3]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">SO₂</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][4]}}
+                        </span>
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][4]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">PM₂․₅</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][5]}}
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][5]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">PM₁₀</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][6]}}
+                        </span>
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][6]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+                <div class="airpollutants-card-content">
+                    <div class="airpollutants-card-col1">
+                        <span class="airpollutants-name">NH₃</span>
+                    </div>
+                    <div class="airpollutants-card-col2">
+                        <span class="airpollutants-desc">
+                            {{data['pollutants_desc'][7]}}
+                        </span>
+                    </div>
+                    <div class="airpollutants-card-col3">
+                        <span class="ap-value">{{data['pollutants'][7]}}</span>
+                        <span>μg/m3</span>
+                    </div>
+                </div>
+            </main>
+            {% endif %}
+            <!-- JINJA TEMPLATE -->
+            <!-- FLASK INTEGRATION GOES HERE -->
+
+        </div>
+
+    </main>
+
+    <!-- <footer>
+        <span>AirCast,2023 Developed with ❤️ by TEAM PERCEPTRON</span>
+    </footer> -->
+</body>
+</html>
