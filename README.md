@@ -43,3 +43,9 @@ The project uses dataset only for predicting Air Quality Index value which consi
 Datset Link for all 10 cities merged - [tncities.csv](dataset/TNCities.csv) (Size: 7.17 MB)
 
 The dataset has been cleaned and preprocessed using Synthetic Minority Oversampling Technique (SMOTE) for balancing the dataset
+
+## Models and Algorithms
+## Requirements
+## Usage
+## Results
+
