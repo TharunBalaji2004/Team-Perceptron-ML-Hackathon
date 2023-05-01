@@ -82,6 +82,7 @@ Among these mentioned algorithms, since Random Forest Classifier (RFC) acheieved
 To run this project, you will need the following dependencies:
 
 - Python 3 
+- Flask
 - Numpy
 - Pandas
 - Scikit-learn
