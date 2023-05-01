@@ -83,3 +83,4 @@ Clone the repo and start running the project.
 
 ## Results
 
+The project has successfully acheived its primary goals and bootstrapped along with Backend and API integration for facilitating Weather Forecasting and Air Quality Monitoring System. We have deployed our ML model and hosted through website domain, the website readily available for use and dynamically renders weather data as well as makes near accurate air quality predictions. 
