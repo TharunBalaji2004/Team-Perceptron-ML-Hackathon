@@ -9,6 +9,9 @@
 <p align="center">
 <b>TNSDC - Naan Mudhalvan - Python Virtual Internship Program - ML Project Hackathon (April 2023)</b>
 </p>
+<p align="center">
+<a href="https://drive.google.com/file/d/1mtd-CFGJ8jYDw3UKo1_lUbJsqspUk8K2/view?usp=sharing">View Project Report</a>
+</p>
 
 ## Project Description
 
