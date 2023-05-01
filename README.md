@@ -51,6 +51,17 @@ Datset Link for all 10 cities merged - [tncities.csv](dataset/TNCities.csv) (Siz
 The dataset has been cleaned and preprocessed using Synthetic Minority Oversampling Technique (SMOTE) for balancing the dataset.
 
 ## Models and Algorithms
+
+The following algorithms have been used in this project to train the model:
+
+| Algorithm Name | Avg Accuracy |
+| :------: | :------: |
+| Support Vector Machine (SVM) | 80% |
+| Random Forest Classifier (RFC) | 90% |
+| XG Boost Classifier (XGBC) | 87% |
+
+Among these mentioned algorithms, since Random Forest Classifier (RFC) acheieved a comparative higher accuracy it has been used to train and pickle the ML model.
+
 ## Requirements
 
 To run this project, you will need the following dependencies:
