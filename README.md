@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/95350584/235409154-5bd482f9-3b71-4a83-a064-819a18cde963.png" alt="tngov" height="150px" />
+  &nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/95350584/235409148-02efcb21-db8b-4122-ac4c-71560068311b.png" alt="naanmudhalvan" height="150px" width="250px" />
+  &nbsp;&nbsp;
+  <img src="https://user-images.githubusercontent.com/95350584/235409164-2badcbfb-46db-49b3-8758-40b7eef13fcd.jpg" alt="pantech" height="150px" />
+</p>
+
 ## Project Description
 
 *Real Time Air Quality Monitoring & Weather Forecasting System* is a novel project for real-time monitoring and forecasting of air quality and weather conditions. The system uses various weather parameters of a specified location and consists of a trained ML model for predicting [Air Quality Index (AQI)](https://en.wikipedia.org/wiki/Air_quality_index) remarks from air quality parameters.
