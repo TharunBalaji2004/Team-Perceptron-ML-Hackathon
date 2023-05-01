@@ -75,7 +75,7 @@ The following algorithms have been used in this project to train the model:
 | Random Forest Classifier (RFC) | 90% |
 | XG Boost Classifier (XGBC) | 87% |
 
-Among these mentioned algorithms, since Random Forest Classifier (RFC) acheieved a comparative higher accuracy it has been used to train and pickle the ML model.
+Among these mentioned algorithms, since Random Forest Classifier (RFC) acheieved a comparative higher accuracy it has been used to train and pickle the ML model. With the help of weather parameters the model is trained to predict the value of AQI and remarks.
 
 ## Requirements
 
