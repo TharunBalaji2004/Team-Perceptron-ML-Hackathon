@@ -29,15 +29,6 @@ This project was developed for TNSDC Naan Mudhalvan ML Project Hackathon (April 
 | :---: | :---: | :---: |
 | <p>HTML5, CSS3</p><p><img src="https://user-images.githubusercontent.com/95350584/235406526-d43c4af9-8474-4eea-b43c-b9f21439304c.png" alt="html5" height="100px" /><img src="https://user-images.githubusercontent.com/95350584/235406565-ddfe128c-af6d-4263-80df-631c535fdc8c.png" alt="css3" height="100px" /></p> | <p>Pyhton3, Flask</p><p><img src="https://user-images.githubusercontent.com/95350584/235407004-49b279a5-abc2-4e5f-874f-103c8b60787d.png" alt="python3" height="100px" />&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/95350584/235406911-026d3fcd-2773-4142-a042-6cd9f171a3dc.png" alt="flask" height="100px" /></p> | <p>Numpy, Pandas, Scikit Learn</p><p><img src="https://seeklogo.com/images/N/numpy-logo-479C24EC79-seeklogo.com.png" alt="numpy" height="100px" />&nbsp;&nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Pandas_mark.svg" alt="pandas" height="100px" />&nbsp;&nbsp;<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikitlearn" height="100px" /></p> |
 
-
-
-<p>Numpy, Pandas, Scikit Learn</p>
-<p>
-  <img src="https://seeklogo.com/images/N/numpy-logo-479C24EC79-seeklogo.com.png" alt="numpy" height="50px" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Pandas_mark.svg" alt="pandas" height="50px" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikitlearn" height="50px" />
-</p>
-
 ## Dataset
 
 The project uses dataset only for predicting Air Quality Index value which consists of air pollutant values such as CO, NO, NO2, PM2.5, PM10, etc. The dataset consists of air quality recorded in past 1 year of Top 10 Tamil Nadu cities, fetched from OpenWeather API which are given by:
