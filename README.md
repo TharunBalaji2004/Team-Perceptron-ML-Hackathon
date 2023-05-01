@@ -87,4 +87,4 @@ The project has successfully acheived its primary goals and bootstrapped along w
 
 AirCast, 2023 - https://aircast.onrender.com (*Website may experience spin down issue, kindly wait for few seconds*)
 
-Special Thanks to Team members, who had spent lot of efforts on building the ML model and Website integration with and our college management for encouraging our participation in this project. 
+Special Thanks 🤝 to Team members, who had spent lot of efforts on building the ML model and Website integration with and our college management for encouraging our participation in this project. 
