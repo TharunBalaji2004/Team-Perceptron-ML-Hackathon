@@ -97,6 +97,8 @@ Clone the repo and start running the project.
 
 The project has successfully acheived its primary goals and bootstrapped along with Backend and API integration for facilitating Weather Forecasting and Air Quality Monitoring System. We have deployed our ML model and hosted through website domain, the website readily available for use and dynamically renders weather data as well as makes near accurate air quality predictions. 
 
-AirCast, 2023 - https://aircast.onrender.com (*Website may experience spin down issue, kindly wait for few seconds*)
+AirCast, 2023
+<p>Link 1: https://aircast.onrender.com</p>
+<p>Link 2: https://aircast.up.railway.app</p>
 
 Special Thanks 🤝 to Team members, who had spent lot of efforts on building the ML model and Website integration with and college management for encouraging our participation in this project. 
