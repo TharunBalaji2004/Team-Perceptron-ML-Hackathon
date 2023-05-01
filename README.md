@@ -1,6 +1,6 @@
 ## Project Description
 
-*Real Time Air Quality Monitoring & Weather Forecasting System* is a novel project for real-time monitoring and forecasting of air quality and weather conditions. The system uses various weather parameters of a specified location and consists of a trained ML model for predicting air quality index(AQI) remarks from air quality parameters.
+*Real Time Air Quality Monitoring & Weather Forecasting System* is a novel project for real-time monitoring and forecasting of air quality and weather conditions. The system uses various weather parameters of a specified location and consists of a trained ML model for predicting Air Quality Index(AQI) remarks from air quality parameters.
 
 The project aims to:
 
@@ -22,3 +22,24 @@ This project was developed for TNSDC Naan Mudhalvan ML Project Hackathon (April 
 | Surya Prakash V | CSE (CyberSec) | suryaprakashv.cse2022@citchennai.net | [suryaaprakassh](https://github.com/suryaaprakassh) |
 | Nadeem M | CSE (CyberSec) | nadeemm.cse2022@citchennai.net | [Nadeem-05](https://github.com/Nadeem-05) |
 | Harshithaa RG | IT | harshithaarg.it2022@citchennai.net | [HarshithaaRG](https://github.com/HarshithaaRG) |
+
+## Dataset
+
+The project uses dataset only for predicting Air Quality Index value which consists of air pollutant values such as CO, NO, NO2, PM2.5, PM10, etc. The dataset consists of air quality recorded in past 1 year of Top 10 Tamil Nadu cities, which are given by:
+
+| City Name | Datset Size | Dataset Link |
+| :------: | :------: | :------: |
+| Chennai | 665 KB | [chennai.csv](dataset/Chennai.csv) |
+| Coimbatore | 639 KB | [coimbatore.csv](dataset/Coimbatore.csv) |
+| Dindigul | 636 KB | [dindigul.csv](dataset/Dindigul.csv) |
+| Erode | 643 KB | [erode.csv](dataset/Erode.csv) |
+| Madurai | 635 KB | [madurai.csv](dataset/Madurai.csv) |
+| Salem | 651 KB | [salem.csv](dataset/Salem.csv) |
+| Thoothukudi | 628 KB | [thoothukudi.csv](dataset/Thoothukudi.csv) |
+| Tiruchirappalli | 636 KB | [tiruchirappalli.csv](dataset/Tiruchirappalli.csv) |
+| Tirunelveli | 625 KB | [tirunelveli.csv](dataset/Tirunelveli.csv) |
+| Vellore | 632 KB | [vellore.csv](dataset/Vellore.csv) |
+
+Datset Link for all 10 cities merged - [tncities.csv](dataset/TNCities.csv) (Size: 7.17 MB)
+
+The dataset has been cleaned and preprocessed using Synthetic Minority Oversampling Technique (SMOTE) for balancing the dataset
