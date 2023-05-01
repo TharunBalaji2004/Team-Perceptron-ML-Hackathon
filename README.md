@@ -95,10 +95,45 @@ Clone the repo and start running the project.
 
 ## Project Screenshots
 
-| 1) Project NoteBook Hierarchy Structure | 2) Project Data Visualization | 3)Project Data Preprocessing |
-| :---: | :---: | :---: |
-| <img src="https://user-images.githubusercontent.com/95350584/235411302-692214fa-d5b2-40d8-93ba-42aa478d3816.png" alt="1" height="300px" /> | <img src="https://user-images.githubusercontent.com/95350584/235411369-2315c35e-5233-4017-8cc1-0e58a10fe201.png" alt="1" height="300px" /> | <img src="https://user-images.githubusercontent.com/95350584/235411449-2338b292-5d92-4ab5-8af5-9ca91be4b1ec.png" alt="1" height="300px" /> |
+| 1) Project NoteBook Hierarchy Structure |  
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235411302-692214fa-d5b2-40d8-93ba-42aa478d3816.png" alt="1" height="400px" width="700" /> | 
 
+| 2) Project Data Visualization |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235411369-2315c35e-5233-4017-8cc1-0e58a10fe201.png" alt="1" height="400px" width="700" /> | 
+
+| 3) Project Data Preprocessing |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235411449-2338b292-5d92-4ab5-8af5-9ca91be4b1ec.png" alt="1" height="400px" width="700" /> |
+
+| 4) Project Model Training using SVM, RFC and XGBC Classifier |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235412096-d175cccf-e52d-47a0-af34-8cb517fcbbc5.png" alt="1" height="400px" width="700" /> |
+
+| 5) Integrated Backend with Flask |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235412159-34ac7eac-8af4-4749-9878-cb1d5a66dc8e.png" alt="1" height="400px" width="700" /> |
+
+| 6) Developed UI part |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235412125-a3cf1126-215d-4b21-824e-37b75aa46219.png" alt="1" height="400px" width="700" /> |
+
+| 7) Deployed Website (Weather Forecasting - Today) |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235412182-94ce422d-b2c6-4e05-8959-61703587ebe6.png" alt="1" height="400px" width="700" /> |
+
+| 8) Deployed Website (Weather Forecasting - Hourly) |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235412201-35b8c88a-063a-4998-a412-46f8b5bed7fc.png" alt="1" height="400px" width="700" /> |
+
+| 9) Deployed Website (Weather Forecasting - Daily) |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235412231-17a0719a-84b8-4b91-af12-8e6b8145d126.png" alt="1" height="400px" width="700" /> |)
+
+| 10) Deployed Website (Air Quality Index Prediction) |
+| :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235412251-99581c5c-0662-4358-96e9-af7848d77b6d.png" alt="1" height="400px" width="700" /> |
 
 ## Results
 
