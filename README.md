@@ -93,6 +93,13 @@ pip install -r requirements.txt
 
 Clone the repo and start running the project.
 
+## Project Screenshots
+
+| 1) Project NoteBook Hierarchy Structure | 2) Project Data Visualization | 3)Project Data Preprocessing |
+| :---: | :---: | :---: |
+| <img src="https://user-images.githubusercontent.com/95350584/235411302-692214fa-d5b2-40d8-93ba-42aa478d3816.png" alt="1" height="300px" /> | <img src="https://user-images.githubusercontent.com/95350584/235411369-2315c35e-5233-4017-8cc1-0e58a10fe201.png" alt="1" height="300px" /> | <img src="https://user-images.githubusercontent.com/95350584/235411449-2338b292-5d92-4ab5-8af5-9ca91be4b1ec.png" alt="1" height="300px" /> |
+
+
 ## Results
 
 The project has successfully acheived its primary goals and bootstrapped along with Backend and API integration for facilitating Weather Forecasting and Air Quality Monitoring System. We have deployed our ML model and hosted through website domain, the website readily available for use and dynamically renders weather data as well as makes near accurate air quality predictions. 
