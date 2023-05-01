@@ -14,7 +14,7 @@
 
 *Real Time Air Quality Monitoring & Weather Forecasting System* is a novel project for real-time monitoring and forecasting of air quality and weather conditions. The system uses various weather parameters of a specified location and consists of a trained ML model for predicting [Air Quality Index (AQI)](https://en.wikipedia.org/wiki/Air_quality_index) remarks from air quality parameters.
 
-The project aims to:
+This project aims to:
 
 - Develop a system for real-time monitoring and forecasting of air quality and weatherconditions. The system uses various sensors to monitor air quality parameters such as particulate matter (PM2.5 and PM10), ozone (O3), carbon monoxide (CO), nitrogendioxide(NO2), and sulfur dioxide (SO2), as well as weather parameters suchas temperature, humidity, pressure and wind speed.
 
