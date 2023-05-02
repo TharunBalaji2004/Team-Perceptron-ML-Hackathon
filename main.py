@@ -2,6 +2,7 @@ from flask import Flask, render_template, session, redirect, url_for, request
 import os
 import requests
 import requests, json
+from pytz import timezone
 from dotenv import load_dotenv
 from datetime import datetime
 from time import strftime, localtime
@@ -9,7 +10,8 @@ import pickle,numpy as np
 model = pickle.load(open("airquality_model.pkl","rb"))
 
 i = 0
-dt = datetime.now()
+now_utc = datetime.now(timezone('UTC'))
+dt = now_utc.astimezone(timezone('Asia/Kolkata'))
 app = Flask(__name__)
 load_dotenv()
 api = os.getenv("api")
@@ -31,7 +33,7 @@ def hourlydata():
         list_of_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai,tn,in&appid={api}&units=metric").json()
         datalist = requests.get(f"https://pro.openweathermap.org/data/2.5/forecast/hourly?q=chennai&cnt=10&appid={api}&units=metric").json()
     data = {
-        "cityname": f"{my_var[0]}",
+        "cityname": f"{my_var[0].title()}",
         "country_code": str(list_of_data["sys"]["country"]),
         "coordinate": str(list_of_data["coord"]["lon"])
         + " "
@@ -103,7 +105,7 @@ def dailydata():
         list_of_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai,tn,in&appid={api}&units=metric").json()
         datalist = requests.get(f"https://api.openweathermap.org/data/2.5/forecast/daily?q=chennai&cnt=10&appid={api}&units=metric").json()
     data = {
-        "cityname": f"{my_var[0]}",
+        "cityname": f"{my_var[0].title()}",
         "country_code": str(list_of_data["sys"]["country"]),
         "coordinate": str(list_of_data["coord"]["lon"])
         + " "
@@ -149,7 +151,7 @@ def get_data():
         list_of_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai,tn,in&appid={api}&units=metric").json()
         datalist = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q=chennai&appid={api}&units=metric").json()
     data = {
-        "cityname": f"{my_var[0]}",
+        "cityname": f"{my_var[0].title()}",
         "country_code": str(list_of_data["sys"]["country"]),
         "coordinate": str(list_of_data["coord"]["lon"])
         + " "
@@ -171,7 +173,6 @@ def airqualitydata():
     my_var = session.get("my_var", None)
     if my_var is None:
         my_var = ["Chennai"]
-
     city_names = {"chennai":0,"coimbatore":1,"madurai":2,"trichy":3,"tiruchirappalli":3,"salem":4,
                   "tirunelveli":5,"erode":6,"vellore":7,"thoothukudi":8,"dindigul":9}
     cities = {
@@ -299,6 +300,15 @@ def airquality():
         countrycode = "in"
         session["my_var"] = [city, statecode, countrycode]
         return redirect(url_for("airquality"))
+    city_names_list = ["chennai","coimbatore","madurai","trichy","tiruchirappalli","salem",
+                  "tirunelveli","erode","vellore","thoothukudi","dindigul"]
+    my_var = session.get("my_var", None)
+    if my_var[0] not in city_names_list:
+        data = {
+        "cityname": f"{my_var[0].title()}",
+        "lastupdate": str(dt.strftime("%H:%M")),
+        }
+        return render_template("airqualityerror.html",data=data)
     data = airqualitydata()
     print(data)
     return render_template("airquality.html",data=data)
