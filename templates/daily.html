@@ -21,12 +21,12 @@
             <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
             <p style="margin-left: 10px; color: white;"><b>{{data.cityname}}</b>, Tamil Nadu</p>
         </div>
-        <div class="header-search">
-            <form method ="POST">
-            <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-            <input type="text" name = "city" class="search-box" placeholder="Search for places"/>
-            </form>
-        </div>
+        <form method ="POST">
+            <div class="header-search">
+                <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+                <input type="text" name ="city" class="search-box" placeholder="Search for places"/>
+            </div>
+        </form>
     </header>   
 
     <main class="page-content">
@@ -38,102 +38,133 @@
                 <a href="#" class="navi-content">DAILY</a>
                 <a href="{{url_for('airquality')}}" class="navi-content">AIR QUALITY</a>
             </div>
+            <div class="navi-part2">
+                <p class="navi-content">RELATED NEWS</a>
+            </div>
         </nav>  
         <hr class="navi-hr">
 
         <div class="page-weathercard">
-            <main class="weathercard-main">
-                <div class="weathercard-head">
-                    <p>{{data.time1}}</p>
-                    <p>Last update at : {{data.lastupdate}}</p>
+            <div class="col-1">
+                <main class="weathercard-main">
+                    <div class="weathercard-head">
+                        <p>{{data.time1}}</p>
+                        <p>Last update at : {{data.lastupdate}}</p>
+                    </div>
+                    
+                    <hr>
+            
+                    <div class="weathercard-temp">
+                        <div class="part-1">
+                            <img class='temp-img' src={{data.img1}}>
+                            <span class="temp">{{data.temp1}}</span>
+                            <span class="celsius">°C</span>
+                        </div>
+                        <div class="part-2">
+                            <span class="remark">{{data.weather1}}</span>
+                        </div>
+                        <br />
+                    </div>
+                    
+                </main>
+                <main class="weathercard-main">
+                    <div class="weathercard-head">
+                        <p>{{data.time2}}</p>
+                        <p>Last update at : {{data.lastupdate}}</p>
+                    </div>
+                    
+                    <hr>
+            
+                    <div class="weathercard-temp">
+                        <div class="part-1">
+                            <img class='temp-img' src={{data.img2}}>
+                            <span class="temp">{{data.temp2}}</span>
+                            <span class="celsius">°C</span>
+                        </div>
+                        <div class="part-2">
+                            <span class="remark">{{data.weather2}}</span>
+                        </div>
+                        <br />
+                    </div>
+                    
+                </main>
+                <main class="weathercard-main">
+                    <div class="weathercard-head">
+                        <p>{{data.time3}}</p>
+                        <p>Last update at : {{data.lastupdate}}</p>
+                    </div>
+                    
+                    <hr>
+            
+                    <div class="weathercard-temp">
+                        <div class="part-1">
+                            <img class='temp-img' src={{data.img3}}>
+                            <span class="temp">{{data.temp3}}</span>
+                            <span class="celsius">°C</span>
+                        </div>
+                        <div class="part-2">
+                            <span class="remark">{{data.weather3}}</span>
+                        </div>
+                        <br />
+                    </div>
+                    
+                </main>
+                <main class="weathercard-main">
+                    <div class="weathercard-head">
+                        <p>{{data.time4}}</p>
+                        <p>Last update at : {{data.lastupdate}}</p>
+                    </div>
+                    
+                    <hr>
+            
+                    <div class="weathercard-temp">
+                        <div class="part-1">
+                            <img class='temp-img' src={{data.img4}}>
+                            <span class="temp">{{data.temp4}}</span>
+                            <span class="celsius">°C</span>
+                        </div>
+                        <div class="part-2">
+                            <span class="remark">{{data.weather4}}</span>
+                        </div>
+                        <br />
+                    </div>
+                    
+                </main>
+                
+                {%endif %}
+            </div>
+            <div class="col-2">
+                <div class="news-card-container">
+                    <img class="news-card-img" src="../static/img/weathernews6.png" alt="">
+                    <div class="news-card-title">
+                        <span>Chennai Meteorological Centre has predicted heavy rainfall in nine districts of Tamil Nadu till May 3</span>
+                    </div>
+                    <div class="news-card-caption">
+                        <span>Posted on: May 01 04:30 PM</span>
+                    </div>
                 </div>
                 
-                <hr>
-        
-                <div class="weathercard-temp">
-                    <div class="part-1">
-                        <img class='temp-img' src={{data.img1}}>
-                        <span class="temp">{{data.temp1}}</span>
-                        <span class="celsius">°C</span>
+                <div class="news-card-container">
+                    <img class="news-card-img" src="../static/img/weathernews1.png" alt="">
+                    <div class="news-card-title">
+                        <span>Tamil Nadu likely to get downpour during day and night for next few days says State Weather Department</span>
                     </div>
-                    <div class="part-2">
-                        <span class="remark">{{data.weather1}}</span>
+                    <div class="news-card-caption">
+                        <span>Posted on: Apr 30 08:00 AM</span>
                     </div>
-                    <br />
                 </div>
-                
-            </main>
+            
+                <div class="news-card-container">
+                    <img class="news-card-img" src="../static/img/weathernews5.png" alt="">
+                    <div class="news-card-title">
+                        <span>Severe heat wave: Workers are advised to reschedule working hours</span>
+                    </div>
+                    <div class="news-card-caption">
+                        <span>Posted on: Apr 27 11:30 AM</span>
+                    </div>
+                </div>
 
-            <main class="weathercard-main">
-                <div class="weathercard-head">
-                    <p>{{data.time2}}</p>
-                    <p>Last update at : {{data.lastupdate}}</p>
-                </div>
-                
-                <hr>
-        
-                <div class="weathercard-temp">
-                    <div class="part-1">
-                        <img class='temp-img' src={{data.img2}}>
-                        <span class="temp">{{data.temp2}}</span>
-                        <span class="celsius">°C</span>
-                    </div>
-                    <div class="part-2">
-                        <span class="remark">{{data.weather2}}</span>
-                    </div>
-                    <br />
-                </div>
-                
-            </main>
-
-            <main class="weathercard-main">
-                <div class="weathercard-head">
-                    <p>{{data.time3}}</p>
-                    <p>Last update at : {{data.lastupdate}}</p>
-                </div>
-                
-                <hr>
-        
-                <div class="weathercard-temp">
-                    <div class="part-1">
-                        <img class='temp-img' src={{data.img3}}>
-                        <span class="temp">{{data.temp3}}</span>
-                        <span class="celsius">°C</span>
-                    </div>
-                    <div class="part-2">
-                        <span class="remark">{{data.weather3}}</span>
-                    </div>
-                    <br />
-                </div>
-                
-            </main>
-            
-            <main class="weathercard-main">
-                <div class="weathercard-head">
-                    <p>{{data.time4}}</p>
-                    <p>Last update at : {{data.lastupdate}}</p>
-                </div>
-                
-                <hr>
-        
-                <div class="weathercard-temp">
-                    <div class="part-1">
-                        <img class='temp-img' src={{data.img4}}>
-                        <span class="temp">{{data.temp4}}</span>
-                        <span class="celsius">°C</span>
-                    </div>
-                    <div class="part-2">
-                        <span class="remark">{{data.weather4}}</span>
-                    </div>
-                    <br />
-                </div>
-                
-            </main>
-            
-
-            
-            {%endif %}
-            
+            </div>
 
             <!-- JINJA TEMPLATE -->
             <!-- FLASK INTEGRATION GOES HERE -->

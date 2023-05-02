@@ -21,12 +21,13 @@
             <img src="{{ url_for('static',filename='img/location .png') }}" alt="" height="50px">
             <p style="margin-left: 10px; color: white;"><b>{{data.cityname}}</b>, Tamil Nadu</p>
         </div>
-        <div class="header-search">
-            <form method ="POST">
-            <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-            <input type="text" name = "city" class="search-box" placeholder="Search for places"/>
-            </form>
-        </div>
+        <form method ="POST">
+            <div class="header-search">
+                <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+                <input type="text" name ="city" class="search-box" placeholder="Search for places"/>
+            </div>
+        </form>
+
     </header>   
 
     <main class="page-content">
@@ -38,69 +39,86 @@
                 <a href="{{url_for('daily')}}" class="navi-content">DAILY</a>
                 <a href="{{url_for('airquality')}}" class="navi-content">AIR QUALITY</a>
             </div>
+            <div class="navi-part2">
+                <p class="navi-content">RELATED NEWS</a>
+            </div>
         </nav>  
         <hr class="navi-hr">
 
         <div class="page-weathercard">
-            <main class="weathercard-main">
-                <div class="weathercard-head">
-                    <p>Current Weather</p>
-                    <p>Last update at : {{data.lastupdate}}</p>
-                </div>
-                
-                <hr>
-        
-                <div class="weathercard-temp">
-                    <div class="part-1">
-                        <img class='temp-img' src={{data.img}}>
-                        <span class="temp">{{data.temp}}</span>
-                        <span class="celsius">°C</span>
+            <div class="col-1">
+                <main class="weathercard-main">
+                    <div class="weathercard-head">
+                        <p>Current Weather</p>
+                        <p>Last update at : {{data.lastupdate}}</p>
                     </div>
-                    <div class="part-2">
-                        <span class="remark">{{data.weather}}</span>
-                    </div>
-                        
-                </div>
-        
-                <div class="weathercard-details">
-                    <div class="details-col-1">
-                        <div class="details-row">
-                            <p class="details-content">Wind Speed</p>
-                            <p class="details-content" style="color: grey;">{{data.wind}} km/h</p>
-                        </div>
-                        
-                        <hr class="details-line">
-                        <div class="details-row">
-                            <p class="details-content">Humidity</p>
-                            <p class="details-content" style="color: grey;">{{data.humidity}}</p>
-                        </div>
-                        <hr class="details-line">
-                        <div class="details-row">
-                            <p class="details-content">Max Temp</p>
-                            <p class="details-content" style="color: grey;">{{data.maxtemp}}°C</p>
-                        </div>
-                    </div>
-                    <div class="details-col-2">
-                        <div class="details-row">
-                            <p class="details-content">Pressure</p>
-                            <p class="details-content" style="color: grey;">{{data.pressure}} mb</p>
-                        </div>
-                        <hr class="details-line">
-                        <div class="details-row">
-                            <p class="details-content">Visibility</p>
-                            <p class="details-content" style="color: grey;">{{data.visibility}} km</p>
-                        </div>
-                        <hr class="details-line">
-                        <div class="details-row">
-                            <p class="details-content">Min Temp</p>
-                            <p class="details-content" style="color: grey;">{{data.mintemp}}°C</p>
-                        </div>
-                    </div>
-                </div>
-        
-            {%endif %}
-            </main>
+                    
+                    <hr>
             
+                    <div class="weathercard-temp">
+                        <div class="part-1">
+                            <img class='temp-img' src={{data.img}}>
+                            <span class="temp">{{data.temp}}</span>
+                            <span class="celsius">°C</span>
+                        </div>
+                        <div class="part-2">
+                            <span class="remark">{{data.weather}}</span>
+                        </div>
+                            
+                    </div>
+            
+                    <div class="weathercard-details">
+                        <div class="details-col-1">
+                            <div class="details-row">
+                                <p class="details-content">Wind Speed</p>
+                                <p class="details-content" style="color: grey;">{{data.wind}} km/h</p>
+                            </div>
+                            
+                            <hr class="details-line">
+                            <div class="details-row">
+                                <p class="details-content">Humidity</p>
+                                <p class="details-content" style="color: grey;">{{data.humidity}}</p>
+                            </div>
+                            <hr class="details-line">
+                            <div class="details-row">
+                                <p class="details-content">Max Temp</p>
+                                <p class="details-content" style="color: grey;">{{data.maxtemp}}°C</p>
+                            </div>
+                        </div>
+                        <div class="details-col-2">
+                            <div class="details-row">
+                                <p class="details-content">Pressure</p>
+                                <p class="details-content" style="color: grey;">{{data.pressure}} mb</p>
+                            </div>
+                            <hr class="details-line">
+                            <div class="details-row">
+                                <p class="details-content">Visibility</p>
+                                <p class="details-content" style="color: grey;">{{data.visibility}} km</p>
+                            </div>
+                            <hr class="details-line">
+                            <div class="details-row">
+                                <p class="details-content">Min Temp</p>
+                                <p class="details-content" style="color: grey;">{{data.mintemp}}°C</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                {%endif %}
+                </main>
+                
+
+            </div>
+            <div class="col-2">
+                <div class="news-card-container">
+                    <img class="news-card-img" src="../static/img/weathernews1.png" alt="">
+                    <div class="news-card-title">
+                        <span>Widespread rain in TN, heavy in some districts, may continue till May 3</span>
+                    </div>
+                    <div class="news-card-caption">
+                        <span>Posted on: May 01 09:30 AM</span>
+                    </div>
+                </div>
+            </div>
 
             <!-- JINJA TEMPLATE -->
             <!-- FLASK INTEGRATION GOES HERE -->
