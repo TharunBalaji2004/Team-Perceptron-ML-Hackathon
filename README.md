@@ -125,19 +125,19 @@ Clone the repo and start running the project.
 
 | 7) Deployed Website (Weather Forecasting - Today) |
 | :---: |
-| <img src="https://user-images.githubusercontent.com/95350584/235412182-94ce422d-b2c6-4e05-8959-61703587ebe6.png" alt="1" height="400px" width="700" /> |
+| <img src="https://user-images.githubusercontent.com/95350584/235690979-1d8444b8-56ae-4bf2-ad3f-c441465f364e.png" alt="1" height="400px" width="700" /> |
 
 | 8) Deployed Website (Weather Forecasting - Hourly) |
 | :---: |
-| <img src="https://user-images.githubusercontent.com/95350584/235412201-35b8c88a-063a-4998-a412-46f8b5bed7fc.png" alt="1" height="400px" width="700" /> |
+| <img src="https://user-images.githubusercontent.com/95350584/235691194-baa4ebce-3ccf-42c4-a2b6-0fc2535a6240.png" alt="1" height="400px" width="700" /> |
 
 | 9) Deployed Website (Weather Forecasting - Daily) |
 | :---: |
-| <img src="https://user-images.githubusercontent.com/95350584/235412231-17a0719a-84b8-4b91-af12-8e6b8145d126.png" alt="1" height="400px" width="700" /> |)
+| <img src="https://user-images.githubusercontent.com/95350584/235691325-23de29da-2288-4eb5-91a8-3299bd78ed20.png" alt="1" height="400px" width="700" /> |)
 
 | 10) Deployed Website (Air Quality Index Prediction) |
 | :---: |
-| <img src="https://user-images.githubusercontent.com/95350584/235412251-99581c5c-0662-4358-96e9-af7848d77b6d.png" alt="1" height="400px" width="700" /> |
+| <img src="https://user-images.githubusercontent.com/95350584/235691432-d517f680-6710-4c72-8f5f-338a13ced583.png" alt="1" height="400px" width="700" /> |
 
 ## Results
 
