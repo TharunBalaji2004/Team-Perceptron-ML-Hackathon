@@ -31,12 +31,12 @@ This project aims to:
 
 This project was developed for TNSDC Naan Mudhalvan ML Project Hackathon (April 2023) by *Team Perceptron* from Chennai Institute of Technology.
 
-| Name | Dept | Email ID | GitHub Profile |
-| :---: | :---: | :---: | :---: |
-| Tharun Balaji R | CSE | tharunbalajir.cse2021@citchennai.net | [TharunBalaji2004](https://github.com/TharunBalaji2004) |
-| Surya Prakash V | CSE (CyberSec) | suryaprakashv.cse2022@citchennai.net | [suryaaprakassh](https://github.com/suryaaprakassh) |
-| Nadeem M | CSE (CyberSec) | nadeemm.cse2022@citchennai.net | [Nadeem-05](https://github.com/Nadeem-05) |
-| Harshithaa RG | IT | harshithaarg.it2022@citchennai.net | [HarshithaaRG](https://github.com/HarshithaaRG) |
+| Name | Dept | Email ID | GitHub Profile | Role |
+| :---: | :---: | :---: | :---: | :---: |
+| Tharun Balaji R | CSE | tharunbalajir.cse2021@citchennai.net | [TharunBalaji2004](https://github.com/TharunBalaji2004) | ML Model |
+| Surya Prakash V | CSE (CyberSec) | suryaprakashv.cse2022@citchennai.net | [suryaaprakassh](https://github.com/suryaaprakassh) | ML Model |
+| Nadeem M | CSE (CyberSec) | nadeemm.cse2022@citchennai.net | [Nadeem-05](https://github.com/Nadeem-05) | Flask Backend |
+| Harshithaa RG | IT | harshithaarg.it2022@citchennai.net | [HarshithaaRG](https://github.com/HarshithaaRG) | Frontend |
 
 ## Project Tech Stack
 
