@@ -192,7 +192,7 @@ def airqualitydata():
     ]
 
     city_names = {"chennai":0,"coimbatore":1,"madurai":2,"trichy":3,"tiruchirappalli":3,"salem":4,
-                  "tirunelveli":5,"erode":6,"vellore":7,"thoothukudi":8,"dindigul":9, "Salem" :10}
+                  "tirunelveli":5,"erode":6,"vellore":7,"thoothukudi":8,"dindigul":9}
     cities = {
         0:[13.0827,80.2707], #Chennai
         1:[11.0168,76.9558], #Coimbatore
@@ -208,7 +208,7 @@ def airqualitydata():
 
     user_city = my_var[0].lower()
 
-    if (user_city not in city_names):
+    if (user_city.lower() not in city_names):
         data = {
             "cityname": f"{my_var[0].title()}",
             "aqi": "0",
@@ -307,7 +307,7 @@ def daily():
 @app.route("/airquality", methods = ["GET","POST"])
 def airquality():
     if request.method == "POST":
-        city = request.form.get("city")
+        city = request.form.get("city").strip()
         statecode = request.form.get("state")
         countrycode = "in"
         session["my_var"] = [city, statecode, countrycode]
