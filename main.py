@@ -314,4 +314,4 @@ def airquality():
     return render_template("airquality.html",data=data)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
