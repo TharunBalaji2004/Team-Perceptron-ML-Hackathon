@@ -2,7 +2,6 @@ from flask import Flask, render_template, session, redirect, url_for, request
 import os
 import requests
 import requests, json
-from pytz import timezone
 from dotenv import load_dotenv
 from datetime import datetime
 from time import strftime, localtime
@@ -10,8 +9,7 @@ import pickle,numpy as np
 model = pickle.load(open("airquality_model.pkl","rb"))
 
 i = 0
-now_utc = datetime.now(timezone('UTC'))
-dt = now_utc.astimezone(timezone('Asia/Kolkata'))
+dt = datetime.now()
 app = Flask(__name__)
 load_dotenv()
 api = os.getenv("api")
@@ -173,8 +171,28 @@ def airqualitydata():
     my_var = session.get("my_var", None)
     if my_var is None:
         my_var = ["Chennai"]
+
+    airquality_remarks = {
+        1:"The air quality is ideal for most individuals. Enjoy your normal outdoor activities.",
+        2:"The air quality is acceptable and not much harmful. Enjoy your normal outdoor activites.",    
+        3:"The air quality is quite unacceptable for those who are sensitive to pollution. Wearing a mask during outdoor is advised.",
+        4:"The air quality is quite harmful and prolonged outdoor activity is not encouraged. Wearing a mask is highly advised.",
+        5:"The air quality is completely harmful and cause air borne diseases such as asthma and lung diseases. Wearing a N95 or strong layered mask during outdoor and minimizing outdoor activites is highly advised. Unusually sensitive people should consider reducing prolonged or heavy exertion. "
+    }
+    aqi_remarks = {1:"Good",2:"Fair",3:"Moderate",4:"Poor",5:"Very Poor"}
+    pollutants_desc = [
+        "Inhaling CO can be extremely harmful as it reduces the amount of oxygen in the bloodstream, leading to headaches, dizziness, nausea, and even death in high concentrations.",
+        "Inhaling NO can be harmful as it can cause respiratory irritation and damage to the lungs. Prolonged exposure to high levels of NO can also lead to decreased oxygen levels in the body.",
+        "Inhaling NO2 can cause respiratory irritation and damage to the lungs, leading to coughing, wheezing, and shortness of breath.",
+        "Inhaling O3 can cause respiratory irritation and can lead to chest pain, coughing, shortness of breath, and aggravation of asthma symptoms.",
+        "Inhaling SO2 can cause irritation to the eyes, nose, throat, and lungs, leading to respiratory problems such as coughing, wheezing, and shortness of breath. It can also worsen asthma symptoms and increase the risk of respiratory infections.",    
+        "Inhaling PM2.5 can cause serious health problems such as respiratory and cardiovascular diseases, as well as lung cancer.",
+        "Inhaling PM10 (particulate matter with a diameter of 10 micrometers or less) can lead to respiratory and cardiovascular health problems, including lung cancer, asthma, and heart disease.",
+        "Inhaling NH3 (ammonia) can cause respiratory irritation and damage to the lungs, leading to coughing, wheezing, and difficulty breathing."
+    ]
+
     city_names = {"chennai":0,"coimbatore":1,"madurai":2,"trichy":3,"tiruchirappalli":3,"salem":4,
-                  "tirunelveli":5,"erode":6,"vellore":7,"thoothukudi":8,"dindigul":9}
+                  "tirunelveli":5,"erode":6,"vellore":7,"thoothukudi":8,"dindigul":9, "Salem" :10}
     cities = {
         0:[13.0827,80.2707], #Chennai
         1:[11.0168,76.9558], #Coimbatore
@@ -189,6 +207,19 @@ def airqualitydata():
     } #format - [lat,lon]
 
     user_city = my_var[0].lower()
+
+    if (user_city not in city_names):
+        data = {
+            "cityname": f"{my_var[0].title()}",
+            "aqi": "0",
+            "pollutants": ["N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A"],
+            "aqi_remarks": "N/A",
+            "airquality_remarks": "Air Quality Data unavailable",
+            "lastupdate": str(dt.strftime("%H:%M")),
+            "pollutants_desc":pollutants_desc
+        }
+        return data
+
     city_encoded = city_names[user_city]
     city_coord = cities[city_encoded]
     
@@ -210,25 +241,6 @@ def airqualitydata():
     #prediction
     result = model.predict(np.array([co,no,no2,o3,so2,pm2_5,pm10,nh3,city_encoded]).reshape(1,9))
     aqi_predicted = int(result+1)
-
-    airquality_remarks = {
-        1:"The air quality is ideal for most individuals. Enjoy your normal outdoor activities.",
-        2:"The air quality is acceptable and not much harmful. Enjoy your normal outdoor activites.",    
-        3:"The air quality is quite unacceptable for those who are sensitive to pollution. Wearing a mask during outdoor is advised.",
-        4:"The air quality is quite harmful and prolonged outdoor activity is not encouraged. Wearing a mask is highly advised.",
-        5:"The air quality is completely harmful and cause air borne diseases such as asthma and lung diseases. Wearing a N95 or strong layered mask during outdoor and minimizing outdoor activites is highly advised. Unusually sensitive people should consider reducing prolonged or heavy exertion. "
-    }
-    aqi_remarks = {1:"Good",2:"Fair",3:"Moderate",4:"Poor",5:"Very Poor"}
-    pollutants_desc = [
-        "Inhaling CO can be extremely harmful as it reduces the amount of oxygen in the bloodstream, leading to headaches, dizziness, nausea, and even death in high concentrations.",
-        "Inhaling NO can be harmful as it can cause respiratory irritation and damage to the lungs. Prolonged exposure to high levels of NO can also lead to decreased oxygen levels in the body.",
-        "Inhaling NO2 can cause respiratory irritation and damage to the lungs, leading to coughing, wheezing, and shortness of breath.",
-        "Inhaling O3 can cause respiratory irritation and can lead to chest pain, coughing, shortness of breath, and aggravation of asthma symptoms.",
-        "Inhaling SO2 can cause irritation to the eyes, nose, throat, and lungs, leading to respiratory problems such as coughing, wheezing, and shortness of breath. It can also worsen asthma symptoms and increase the risk of respiratory infections.",    
-        "Inhaling PM2.5 can cause serious health problems such as respiratory and cardiovascular diseases, as well as lung cancer.",
-        "Inhaling PM10 (particulate matter with a diameter of 10 micrometers or less) can lead to respiratory and cardiovascular health problems, including lung cancer, asthma, and heart disease.",
-        "Inhaling NH3 (ammonia) can cause respiratory irritation and damage to the lungs, leading to coughing, wheezing, and difficulty breathing."
-    ]
 
     data = {
         "cityname": f"{my_var[0].title()}",
@@ -300,18 +312,9 @@ def airquality():
         countrycode = "in"
         session["my_var"] = [city, statecode, countrycode]
         return redirect(url_for("airquality"))
-    city_names_list = ["chennai","coimbatore","madurai","trichy","tiruchirappalli","salem",
-                  "tirunelveli","erode","vellore","thoothukudi","dindigul"]
-    my_var = session.get("my_var", None)
-    if my_var[0] not in city_names_list:
-        data = {
-        "cityname": f"{my_var[0].title()}",
-        "lastupdate": str(dt.strftime("%H:%M")),
-        }
-        return render_template("airqualityerror.html",data=data)
     data = airqualitydata()
     print(data)
     return render_template("airquality.html",data=data)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
